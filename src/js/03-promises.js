@@ -35,22 +35,22 @@ function createPromise(position, delay) {
 
 function onFormSubmit(evt) {
   evt.preventDefault();
-  const delayVal = delay.value;
-  const stepVal = step.value;
+  const delayVal =parseInt(delay.value) ;
+  const stepVal =parseInt(step.value) ;
   console.log(stepVal)
- const amountVal = amount.value;
+ const amountVal = parseInt(amount.value);
 
-
+  let currentDelay = delayVal;
   for (let i = 1; i <= amountVal; i += 1){
    
-    createPromise(i, delayVal)
+    createPromise(i, currentDelay)
   .then(({ position, delay }) => {
    Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)
   })
   .catch(({ position, delay }) => {
    Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`)
   });
-   delayVal+=stepVal
+   currentDelay+=stepVal
   }
 
 }
