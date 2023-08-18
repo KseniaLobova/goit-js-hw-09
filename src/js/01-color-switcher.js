@@ -7,7 +7,7 @@ stopBtn.addEventListener('click', stopChangeColor);
 stopBtn.disabled = true;
 function changeColor() {
   
-  colorIntervalId = setInterval(() => { body.style.backgroundColor = getRandomHexColor() }, 1000)
+  const colorIntervalId = setInterval(() => { body.style.backgroundColor = getRandomHexColor() }, 1000)
        
      if (colorIntervalId) {
        startBtn.disabled = true;
