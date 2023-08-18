@@ -36,10 +36,7 @@ const options = {
   },
 };
 
-function flatpickr( selector, options) {
-    console.log (flatpickr)
-}
-flatpickr(input, options);
+flatpickr('#datetime-picker', { ...options })
 
 
 
